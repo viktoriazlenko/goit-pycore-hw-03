@@ -8,10 +8,10 @@ import random
 
 def get_numbers_ticket(min, max, quantity):
     
-    if min >= 1 and max <= 1000 and quantity > 0 and quantity <= (max - min + 1):
+    if min >= 1 and max <= 1000 and quantity > 0 and quantity <= (max - min + 1):  # Validate input parameters
         numbers = set()
-        while len(numbers) < quantity:
-            numbers.add(random.randint(min, max))
+        while len(numbers) < quantity: 
+            numbers.add(random.randint(min, max)) # Generate unique random numbers until the desired quantity is reached
         return sorted(numbers)
     
     else:

@@ -9,9 +9,9 @@ user_input = input("Type date at this format 'YYYY-MM-DD': ")
 
 def get_days_from_today(user_input):
     try:
-        input_date = datetime.datetime.strptime(user_input, '%Y-%m-%d')
+        input_date = datetime.datetime.strptime(user_input, '%Y-%m-%d') # Convert string to datetime object
         today = datetime.datetime.today()
-        delta = input_date - today
+        delta = input_date - today # Calculate the difference between the input date and today
         return delta.days
     except ValueError:
         return "Incorrect date format. Type date at this format 'YYYY-MM-DD'."

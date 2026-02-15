@@ -6,11 +6,12 @@
 import re
 
 def normalize_phone(phone_number):
-    cleaned_number = re.sub(r"[^\d+]", "", phone_number)
+    cleaned_number = re.sub(r"[^\d+]", "", phone_number) # Remove all non-numeric characters except for the leading '+'
 
+    # Check if the cleaned number starts with a valid country code or needs to be prefixed with '+38'
     if cleaned_number.startswith('+'):
         return cleaned_number
-    elif cleaned_number.startswith('380'):
+    elif cleaned_number.startswith('380'): 
         return '+' + cleaned_number
     else:
         return '+38' + cleaned_number
